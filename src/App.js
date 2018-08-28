@@ -1,28 +1,34 @@
 import React, { Component } from 'react';
 import './App.css';
+import axios from 'axios';
+import Qs from 'qs';
 
 class App extends Component {
   componentDidMount() {
-    axios({
-      method: 'GET',
+    axios.get({
+      // method: 'GET',
       url: 'http://proxy.hackeryou.com',
       //OR url: 'https://proxy.hackeryou.com',
       dataResponse: 'json',
+      paramsSerializer: function (params) {
+        return Qs.stringify(params, { arrayFormat: 'brackets' })
+      },
       params: {
-        reqUrl: 'https://www.goodreads.com/search.xml?key=wzahGILEJsuTlYRpoLoEw&q=Ender%27s+Game',
-        proxyHeaders: {
-          'header_params': 'value'
+        reqUrl: "https://www.goodreads.com/search.xml",
+        params: {
+          'key': "wzahGILEJsuTlYRpoLoEw"
         },
-        xmlToJSON: false
-      }.then((res) => {
+        xmlToJSON: true,
+        useCache: false
+      }
+    }).then((res) => {
         console.log(res);
-      })
     })
   }
   render() {
     return (
       <div className="App">
-
+        <h1>Reading List</h1>
       </div>
     );
   }
