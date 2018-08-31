@@ -154,6 +154,14 @@ body {
     .resultsFlex .card img {
       width: 10rem; }
 
+i {
+  color: grey; }
+  i:hover {
+    color: orange; }
+
+.starFill {
+  color: orange; }
+
 .wrapper {
   max-width: 110rem;
   margin: 0 auto; }

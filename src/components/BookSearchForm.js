@@ -7,14 +7,16 @@ class BookSearchForm extends Component {
             bookTitle: ''
         }
     }
+    // collect the user's search information
     getUserInput = (e) => {
         this.setState({
             [e.target.id]: e.target.value
         })
 
     }
+    // on submit, pass the user's search information through the runSearch function (api)
+    // also set the book title state back to an empty string
     submitUserInput = (e) => {
-        console.log(this.book)
         e.preventDefault();
         this.props.runSearch(this.state.book);
         this.setState({

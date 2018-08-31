@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Display the results from the api search
 const SearchDisplay = (props) => {
     return (
         <section className="searchResults wrapper">
