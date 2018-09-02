@@ -1,11 +1,6 @@
 @import 'partials/utils.scss';
 @import 'partials/typography.scss';
-@import 'partials/header.scss';
-@import 'partials/searchResults.scss';
+@import 'partials/Header.scss';
+@import 'partials/SearchDisplay.scss';
 @import 'partials/FinishedDisplay.scss';
 @import 'partials/footer.scss';
-
-.wrapper {
-    max-width: 110rem;
-    margin: 0 auto;
-}

@@ -6,16 +6,23 @@ const ToReadDisplay = (props) => {
     return (
         <section className="toReadList">
             <h2>My To Read List</h2>
-            {Object.keys(props.toReadList).map((key) => {
-                return (
-                    <div className="card" key={key}>
-                        <h3>{props.toReadList[key].bookTitle}</h3>
-                        <h4>{props.toReadList[key].bookAuthor}</h4>
-                        <img src={props.toReadList[key].bookCover} alt={`book cover for ${props.toReadList[key].bookTitle}`} />
-                        <button onClick={() => { window.confirm('Are you sure you want to delete this book from your list?') === true ? props.removeFromToReadList(key) : null}} >Remove from list</button>
-                    </div>
-                );
-            })}
+            <div className="listFlex">
+                {Object.keys(props.toReadList).map((key) => {
+                    return (
+                        <div className="card" key={key}>
+                            <h3>{props.toReadList[key].bookTitle}</h3>
+                            <div className="displayFlex">
+                                <img src={props.toReadList[key].bookCover} alt={`book cover for ${props.toReadList[key].bookTitle}`} />
+                                <div className="displayContent">
+                                    <h4>By: {props.toReadList[key].bookAuthor}</h4>
+                                    <button onClick={() => { window.confirm('Are you sure you want to delete this book from your list?') === true ? props.removeFromToReadList(key) : null }} ><i className="fas fa-times"></i></button>
+                                    <i className="fab fa-goodreads"></i>
+                                </div>
+                            </div>
+                        </div>
+                    );
+                })}
+            </div>
         </section>
     )
 }

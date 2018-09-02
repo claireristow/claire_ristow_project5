@@ -10,10 +10,14 @@ const SearchDisplay = (props) => {
                     return (
                         <div className="card" key={i}>
                             <h3>{bookObject.best_book.title}</h3>
-                            <h4>{bookObject.best_book.author.name}</h4>
-                            <img src={bookObject.best_book.image_url} alt={`book cover for ${bookObject.best_book.title}`}/>
-                            <button onClick={() => {props.addToRead(bookObject)}}>To-Read</button>
-                            <button onClick={() => {props.addFinished(bookObject)}}>Finished</button>
+                            <div className="displayFlex">
+                                <img src={bookObject.best_book.image_url} alt={`book cover for ${bookObject.best_book.title}`}/>
+                                <div className="displayContent">
+                                    <h4>By: {bookObject.best_book.author.name}</h4>
+                                    <button onClick={() => { props.addToRead(bookObject) }}><i className="fas fa-plus"></i></button>
+                                    <button onClick={() => { props.addFinished(bookObject) }}><i className="fas fa-check"></i></button>
+                                </div>
+                            </div>
                         </div>
                     )
                 })}

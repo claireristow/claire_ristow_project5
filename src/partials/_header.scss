@@ -1,0 +1,71 @@
+header {
+    width: 100%;
+    background: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url('./assets/cozy-book.jpg');
+    background-size: cover;
+    color: $offBlack;
+    padding: 3rem 0;
+    height: 100vh;
+}
+
+.headerFlex {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header p {
+    font-size: 3.5rem;
+}
+
+nav {
+    background: $darkColour;
+    color: $offWhite;
+	width: 30%;
+	position: fixed;
+	top: 0;
+	right: -30%;
+	bottom: 0;
+	z-index: 10;
+    transition: all .5s;
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        font-size: 40px; 
+    }
+}
+
+nav a {
+	color: $offWhite;
+	padding: 3rem;;
+	border-bottom:  1px solid grey;
+	display: block;
+}
+
+nav a:hover {
+	background: $lightColour;
+}
+
+input#toggle:checked + nav {
+	/* hide or show */
+	right: 0;
+}
+
+input#toggle:checked ~ .wrapper {
+	left: -30%;
+	transition: all .5s;
+}
+
+input#toggle {
+	display: none;
+}
+
+label[for='toggle'] {
+    position: fixed;
+    font-size: 3rem;
+	top: 20px;
+	left: 20px;
+	color: $offBlack;
+}

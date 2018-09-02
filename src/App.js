@@ -5,6 +5,7 @@ import Qs from 'qs';
 import firebase from './firebase';
 
 //COMPONENTS
+import Header from './components/Header';
 import BookSearchForm from './components/BookSearchForm';
 import SearchDisplay from './components/SearchDisplay';
 import ToReadDisplay from './components/ToReadDisplay';
@@ -51,37 +52,43 @@ class App extends Component {
       })
     })
   }
+  // add the selected api book results to the toReadList on firebase
   addToRead = (bookObject) => {
     toReadListRef.push({
       bookTitle: bookObject.best_book.title,
       bookAuthor: bookObject.best_book.author.name,
       bookCover: bookObject.best_book.image_url,
-      rating: 0
+      rating: []
     })
   }
+  // add the selected api book results to the toReadList on firebase
   addFinished = (bookObject) => {
     finishedListRef.push({
       bookTitle: bookObject.best_book.title,
       bookAuthor: bookObject.best_book.author.name,
       bookCover: bookObject.best_book.image_url,
-      rating: 0
+      rating: []
     })
   }
+  // when the remove button is clicked, remove the book item from firebase toReadList
   removeFromToReadList = (key) => {
     const book = firebase.database().ref(`/toReadList/${key}`);
     book.remove();
   }
+  // when the remove button is clicked, remove the book item from firebase finishedList
   removeFromFinishedList = (key) => {
     const book = firebase.database().ref(`/finishedList/${key}`);
     book.remove();
   }
-  updateRating(starNum, key) {
+  // update the number of stars the user selected in the firebase database with using the book key 
+  updateRating(starFillArray, key) {
     const book = firebase.database().ref(`/finishedList/${key}`);
     book.update({
-      rating: starNum
+      rating: starFillArray
     });
     console.log(book)
   }
+  // update the App states with firebase database content
   componentDidMount() {
     toReadListRef.on('value', (snapshot) => {
       this.setState({
@@ -94,15 +101,18 @@ class App extends Component {
       })
     })
   }
+  // compilation of custom components
   render() {
     return (
-      <div className="App wrapper">
-        <h1>Reading List</h1>
-        <BookSearchForm runSearch={this.runSearch}/>
-        <SearchDisplay getSearchInfo={this.state.searchResults} addToRead={this.addToRead} addFinished={this.addFinished}/>
-        <ToReadDisplay toReadList={this.state.toReadList} removeFromToReadList={this.removeFromToReadList}/>
-        <FinishedDisplay finishedList={this.state.finishedList} removeFromFinishedList={this.removeFromFinishedList} updateRating={this.updateRating}/>
-        <Footer/>
+      <div className="App bigFlex">
+        <Header />
+        <div className="wrapper">
+          <BookSearchForm runSearch={this.runSearch}/>
+          <SearchDisplay getSearchInfo={this.state.searchResults} addToRead={this.addToRead} addFinished={this.addFinished}/>
+          <ToReadDisplay toReadList={this.state.toReadList} removeFromToReadList={this.removeFromToReadList}/>
+          <FinishedDisplay finishedList={this.state.finishedList} removeFromFinishedList={this.removeFromFinishedList} updateRating={this.updateRating} checkStarFillClass={this.state.finishedList}/>
+          <Footer/>
+        </div>
       </div>
     );
   }
@@ -112,7 +122,7 @@ class App extends Component {
 // ToReadList: If you click on the component, you will get more information about the book in a drop-down and can write notes (for exmaple, "Recommended by mom").
 // FinishedDisplay: If you click on the component, a drop-down will show more info about the book, notes about how you enjoyed it, and the 5 star rating.
 // make sure firebase remembers the user's rating in the finished books list 
-// when a user change their mind about a rating they originally gave, enable them to change the rating
+// when a user changes their mind about a rating they originally gave, enable them to change the rating
 
 export default App;
 

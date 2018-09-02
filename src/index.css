@@ -131,37 +131,152 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+.wrapper {
+  width: 110rem;
+  margin: 0 auto; }
+
 img {
   max-width: 100%; }
+  img:hover {
+    filter: none; }
 
 html {
   font-size: 62.5%; }
 
 body {
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+  color: #1c1c22;
+  font-family: 'M PLUS Rounded 1c', sans-serif; }
+
+h1 {
+  padding: 3rem 0 0 0;
+  margin: 0;
+  font-size: 7rem; }
+
+h2 {
+  padding: 4rem 0;
+  margin: 0;
+  font-size: 4rem;
+  text-align: left; }
+
+h3 {
+  width: 100%;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center; }
+
+h4 {
+  font-size: 1.8rem; }
+
+header {
+  width: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("./assets/cozy-book.jpg");
+  background-size: cover;
+  color: #1c1c22;
+  padding: 3rem 0;
+  height: 100vh; }
+
+.headerFlex {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+header p {
+  font-size: 3.5rem; }
+
+nav {
+  background: #07393c;
+  color: #e7e5e5;
+  width: 30%;
+  position: fixed;
+  top: 0;
+  right: -30%;
+  bottom: 0;
+  z-index: 10;
+  transition: all .5s; }
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 40px; }
+
+nav a {
+  color: #e7e5e5;
+  padding: 3rem;
+  border-bottom: 1px solid grey;
+  display: block; }
+
+nav a:hover {
+  background: #ef6461; }
+
+input#toggle:checked + nav {
+  /* hide or show */
+  right: 0; }
+
+input#toggle:checked ~ .wrapper {
+  left: -30%;
+  transition: all .5s; }
+
+input#toggle {
+  display: none; }
+
+label[for='toggle'] {
+  position: fixed;
+  font-size: 3rem;
+  top: 20px;
+  left: 20px;
+  color: #1c1c22; }
 
 .resultsFlex {
   display: flex;
   flex-wrap: wrap; }
-  .resultsFlex .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 1rem;
-    width: 20rem; }
-    .resultsFlex .card button {
-      width: 10rem; }
-    .resultsFlex .card img {
-      width: 10rem; }
+  .resultsFlex button {
+    width: 10rem; }
+  .resultsFlex img {
+    width: 10rem; }
 
-i {
-  color: grey; }
-  i:hover {
+.listFlex {
+  display: flex; }
+
+.card {
+  background: #07393c;
+  color: #e7e5e5;
+  text-align: left;
+  margin: 2rem;
+  padding: 1rem;
+  width: calc(33.33% - 4rem); }
+  .card .displayFlex {
+    display: flex; }
+    .card .displayFlex img {
+      object-fit: cover;
+      width: 50%;
+      margin-right: 1rem; }
+    .card .displayFlex .displayContent {
+      width: 50%; }
+
+.displayFlex button {
+  background: #e7e5e5;
+  margin: 0.5rem;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem; }
+  .displayFlex button:hover {
+    background: #ef6461; }
+  .displayFlex button i {
+    color: #07393c;
+    font-size: 2rem; }
+
+i.fa-star {
+  color: lightgrey; }
+  i.fa-star:hover {
     color: orange; }
 
-.starFill {
-  color: orange; }
+.fa-goodreads {
+  font-size: 4rem; }
 
-.wrapper {
-  max-width: 110rem;
-  margin: 0 auto; }
+i.starFill {
+  color: orange; }

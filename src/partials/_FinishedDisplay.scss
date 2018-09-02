@@ -1,11 +1,56 @@
+.listFlex {
+    display: flex;
+}
 
-i {
-    color: grey;
+.card {
+    background: $darkColour;
+    color: $offWhite;
+    text-align: left;
+    margin: 2rem;
+    padding: 1rem;
+    width: calc(33.33% - 4rem);
+    .displayFlex {
+        display: flex;
+        img {
+            object-fit: cover;
+            width: 50%;
+            margin-right: 1rem;
+        }
+        .displayContent {
+            width: 50%;
+        }
+    }
+}
+
+.displayFlex {
+    button {
+        background: $offWhite;
+        margin: 0.5rem;
+        border: none;
+        padding: 1rem 1.5rem;
+        border-radius: 0.5rem;
+        &:hover {
+            background: $lightColour;
+        }
+        i {
+            color: $darkColour;
+            font-size: 2rem;
+        }
+    }
+}
+
+
+i.fa-star {
+    color: lightgrey;
     &:hover {
         color: orange;
     }
 }
 
-.starFill {
+.fa-goodreads {
+    font-size: 4rem;
+}
+
+i.starFill {
     color: orange;
 }

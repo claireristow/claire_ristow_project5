@@ -4,6 +4,16 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
+
+.wrapper {
+    width: 110rem;
+    margin: 0 auto;
+}
+
 img {
     max-width: 100%;
+    // filter: grayscale(100%);
+    &:hover {
+        filter: none;
+    }
 }
