@@ -136,7 +136,8 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   margin: 0 auto; }
 
 img {
-  max-width: 100%; }
+  max-width: 100%;
+  filter: grayscale(100%); }
   img:hover {
     filter: none; }
 
@@ -162,13 +163,14 @@ h2 {
 h3 {
   width: 100%;
   padding: 0;
-  margin: 0 0 2rem 0;
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-align: center; }
+  margin: 0 0 1rem 0;
+  font-size: 2rem;
+  font-weight: 700; }
 
 h4 {
-  font-size: 1.8rem; }
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin: 0 0 1rem 0; }
 
 header {
   width: 100%;
@@ -189,8 +191,8 @@ header p {
   font-size: 3.5rem; }
 
 nav {
-  background: #07393c;
-  color: #e7e5e5;
+  background: #b098a4;
+  color: #fceff9;
   width: 30%;
   position: fixed;
   top: 0;
@@ -205,13 +207,13 @@ nav {
     font-size: 40px; }
 
 nav a {
-  color: #e7e5e5;
+  color: #fceff9;
   padding: 3rem;
   border-bottom: 1px solid grey;
   display: block; }
 
 nav a:hover {
-  background: #ef6461; }
+  background: #bea6b2; }
 
 input#toggle:checked + nav {
   /* hide or show */
@@ -231,6 +233,24 @@ label[for='toggle'] {
   left: 20px;
   color: #1c1c22; }
 
+.searchResults {
+  text-align: left;
+  font-size: 1.8rem; }
+
+.formFlex {
+  margin: 1rem 0; }
+  .formFlex input[type=text] {
+    border-radius: 0.2rem;
+    border: 0.1rem solid #b098a4;
+    margin-right: 1rem; }
+    .formFlex input[type=text]:focus {
+      border: 0.1rem solid #ef6461; }
+  .formFlex input[type=submit] {
+    width: 10rem;
+    font-size: 1.8rem;
+    text-align: center;
+    padding: 0.2rem; }
+
 .resultsFlex {
   display: flex;
   flex-wrap: wrap; }
@@ -243,40 +263,55 @@ label[for='toggle'] {
   display: flex; }
 
 .card {
-  background: #07393c;
-  color: #e7e5e5;
+  display: flex;
+  color: #1c1c22;
   text-align: left;
-  margin: 2rem;
+  margin: 1rem;
   padding: 1rem;
-  width: calc(33.33% - 4rem); }
-  .card .displayFlex {
-    display: flex; }
-    .card .displayFlex img {
-      object-fit: cover;
-      width: 50%;
-      margin-right: 1rem; }
-    .card .displayFlex .displayContent {
-      width: 50%; }
+  width: calc(33.33% - 2rem);
+  font-family: 'Raleway', sans-serif; }
+  .card .displayContent {
+    width: 20rem;
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column; }
+  .card img {
+    object-fit: cover;
+    width: 50%;
+    margin-right: 1rem; }
+    .card img ::after {
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      content: '\f3a8';
+      bottom: 0;
+      right: 0; }
 
-.displayFlex button {
-  background: #e7e5e5;
-  margin: 0.5rem;
-  border: none;
-  padding: 1rem 1.5rem;
-  border-radius: 0.5rem; }
-  .displayFlex button:hover {
-    background: #ef6461; }
-  .displayFlex button i {
-    color: #07393c;
-    font-size: 2rem; }
+.rating {
+  padding: 0 0 1rem 0; }
 
 i.fa-star {
   color: lightgrey; }
   i.fa-star:hover {
-    color: orange; }
+    color: #ef6461; }
 
 .fa-goodreads {
-  font-size: 4rem; }
+  font-size: 2.5rem;
+  color: lightgrey;
+  align-self: flex-end;
+  justify-self: flex-end;
+  padding-top: 0.2rem; }
 
 i.starFill {
-  color: orange; }
+  color: #ef6461; }
+
+button, input[type=submit] {
+  width: 100%;
+  background: #b098a4;
+  border: none;
+  border-radius: 0.2rem;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  font-size: 1.4rem;
+  text-align: left; }
+  button:hover, input[type=submit]:hover {
+    background: #bea6b2; }

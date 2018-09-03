@@ -1,4 +1,27 @@
 
+.searchResults {
+    text-align: left;
+    font-size: 1.8rem;
+}
+
+.formFlex {
+    margin: 1rem 0;
+    input[type=text] {
+        border-radius: 0.2rem;
+        border: 0.1rem solid $darkColour;
+        margin-right: 1rem;
+        &:focus {
+            border: 0.1rem solid $lightColour;
+        }
+    }
+    input[type=submit] {
+        width: 10rem;
+        font-size: 1.8rem;
+        text-align: center;
+        padding: 0.2rem;
+    }
+}
+
 .resultsFlex {
     display: flex;
     flex-wrap: wrap;

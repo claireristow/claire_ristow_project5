@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import * as Scroll from 'react-scroll';
+import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 
 class BookSearchForm extends Component {
     constructor() {
@@ -26,11 +28,16 @@ class BookSearchForm extends Component {
 
     render() {
         return (
-            <form>
-                <label htmlFor="book">Search By Book Title or Author</label>
-                <input onChange={this.getUserInput} type="text" id="book"/>
-                <input onClick={this.submitUserInput} type="submit" value="Search"/>
-            </form>
+            <Element className="searchResults wrapper" name="bookSearch">
+                <h2>Book Search</h2>
+                <form>
+                    <label htmlFor="book">Search By Book Title or Author</label>
+                    <div className="formFlex">
+                        <input onChange={this.getUserInput} type="text" id="book"/>
+                        <input onClick={this.submitUserInput} type="submit" value="Search"/>
+                    </div>
+                </form>
+            </Element>
         )
     }
 }
