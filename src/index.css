@@ -132,7 +132,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   box-sizing: border-box; }
 
 .wrapper {
-  width: 110rem;
+  max-width: 110rem;
   margin: 0 auto; }
 
 img {
@@ -140,6 +140,19 @@ img {
   filter: grayscale(100%); }
   img:hover {
     filter: none; }
+
+@media (max-width: 1180px) {
+  .wrapper {
+    max-width: 80rem; } }
+
+@media (max-width: 900px) {
+  .wrapper {
+    margin: 0 2rem; } }
+
+@media (max-width: 750px) {
+  .wrapper {
+    max-width: 40rem;
+    margin: 0 auto; } }
 
 html {
   font-size: 62.5%; }
@@ -174,7 +187,7 @@ h4 {
 
 header {
   width: 100%;
-  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("./assets/cozy-book.jpg");
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("./assets/cozy-book-optimized.jpg");
   background-size: cover;
   color: #1c1c22;
   padding: 3rem 0;
@@ -231,7 +244,18 @@ label[for='toggle'] {
   font-size: 3rem;
   top: 20px;
   left: 20px;
-  color: #1c1c22; }
+  color: #1c1c22;
+  z-index: 10; }
+
+@media (max-width: 1000px) {
+  nav {
+    width: 60%;
+    right: -60%; } }
+
+@media (max-width: 500px) {
+  nav {
+    width: 100%;
+    right: -100%; } }
 
 .searchResults {
   text-align: left;
@@ -260,7 +284,8 @@ label[for='toggle'] {
     width: 10rem; }
 
 .listFlex {
-  display: flex; }
+  display: flex;
+  flex-wrap: wrap; }
 
 .card {
   display: flex;
@@ -315,3 +340,17 @@ button, input[type=submit] {
   text-align: left; }
   button:hover, input[type=submit]:hover {
     background: #bea6b2; }
+
+@media (max-width: 1180px) {
+  .card {
+    width: calc(50% - 2rem); } }
+
+@media (max-width: 750px) {
+  .card {
+    width: calc(100% - 2rem); } }
+
+@media (max-width: 350px) {
+  .card img {
+    width: 40%; }
+  .card .displayContent {
+    width: 60%; } }

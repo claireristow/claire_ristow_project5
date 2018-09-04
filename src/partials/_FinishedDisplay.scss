@@ -1,5 +1,6 @@
 .listFlex {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .card {
@@ -64,5 +65,27 @@ button, input[type=submit] {
     text-align: left;
     &:hover {
         background: #bea6b2;
+    }
+}
+
+@media (max-width: 1180px) {
+    .card {
+        width: calc(50% - 2rem);
+    }
+}
+
+@media (max-width: 750px) {
+    .card {
+        width: calc(100% - 2rem);
+    }
+}
+
+@media (max-width: 350px) {
+    .card img {
+        width: 40%;
+    }
+
+    .card .displayContent {
+        width: 60%;
     }
 }

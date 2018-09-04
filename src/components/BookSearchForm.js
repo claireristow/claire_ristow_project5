@@ -1,21 +1,19 @@
 import React, {Component} from 'react';
-import * as Scroll from 'react-scroll';
-import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import { Element } from 'react-scroll';
 
 class BookSearchForm extends Component {
     constructor() {
         super();
         this.state = {
             bookTitle: ''
-        }
-    }
+        };
+    };
     // collect the user's search information
     getUserInput = (e) => {
         this.setState({
             [e.target.id]: e.target.value
-        })
-
-    }
+        });
+    };
     // on submit, pass the user's search information through the runSearch function (api)
     // also set the book title state back to an empty string
     submitUserInput = (e) => {
@@ -24,8 +22,7 @@ class BookSearchForm extends Component {
         this.setState({
             bookTitle: ''
         });
-    }
-
+    };
     render() {
         return (
             <Element className="searchResults wrapper" name="bookSearch">
@@ -38,8 +35,8 @@ class BookSearchForm extends Component {
                     </div>
                 </form>
             </Element>
-        )
-    }
-}
+        );
+    };
+};
 
 export default BookSearchForm;

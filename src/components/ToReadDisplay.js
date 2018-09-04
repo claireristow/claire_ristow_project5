@@ -1,6 +1,5 @@
 import React from 'react';
-import * as Scroll from 'react-scroll';
-import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import { Element } from 'react-scroll';
 
 // Display each book in the to-read array as a Component. Each Component will have the book cover, the book title, the book author, a checkmark to move it to the completed list, and an X to remove it from the to-read list.
 // create an alert before to confirm the user wants to delete a book
@@ -25,7 +24,7 @@ const ToReadDisplay = (props) => {
                 })}
             </div>
         </Element>
-    )
-}
+    );
+};
 
 export default ToReadDisplay;

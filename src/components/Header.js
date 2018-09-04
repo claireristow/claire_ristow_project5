@@ -1,6 +1,5 @@
 import React from 'react';
-import * as Scroll from 'react-scroll';
-import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import { Link, animateScroll as scroller } from 'react-scroll';
 
 const Header = () => {
     scroller.scrollTo('myScrollToElement', {
@@ -26,7 +25,7 @@ const Header = () => {
             </div>
 
         </header>
-    )
-}
+    );
+};
 
 export default Header;

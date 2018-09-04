@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import * as Scroll from 'react-scroll';
-import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import { Element } from 'react-scroll';
 
 // Display each book in the complete-books array as a Component. Each Component will have the book cover, book title, book author, and a 5-star rating. The 5 stars are note filled out until the user clicks the number of starts the want to rank the book.
 // create an alert before to confirm the user wants to delete a book
@@ -20,8 +19,7 @@ class FinishedDisplay extends Component {
             starFillArray.push(`star${i}`)
         }
         this.props.updateRating(starFillArray, key);
-    }
-
+    };
     render() {
         return (
             <Element className="finishedList" name="finished" spy={true} smooth={true} duration={500}>
@@ -49,8 +47,8 @@ class FinishedDisplay extends Component {
                 })}
                 </div>
             </Element>
-        )
-    }
-}
+        );
+    };
+};
 
 export default FinishedDisplay;

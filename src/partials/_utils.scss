@@ -6,7 +6,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 
 .wrapper {
-    width: 110rem;
+    max-width: 110rem;
     margin: 0 auto;
 }
 
@@ -15,5 +15,24 @@ img {
     filter: grayscale(100%);
     &:hover {
         filter: none;
+    }
+}
+
+@media (max-width: 1180px) {
+    .wrapper{
+        max-width: 80rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .wrapper {
+        margin: 0 2rem;
+    }
+}
+
+@media (max-width: 750px) {
+    .wrapper {
+        max-width: 40rem;
+        margin: 0 auto;
     }
 }
