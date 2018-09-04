@@ -10,6 +10,7 @@ class BookSearchForm extends Component {
     };
     // collect the user's search information
     getUserInput = (e) => {
+        e.preventDefault();
         this.setState({
             [e.target.id]: e.target.value
         });

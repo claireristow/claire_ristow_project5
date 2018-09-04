@@ -171,5 +171,6 @@ class App extends Component {
 // find a way to clean up console errors
 // allow for the lists in firebase to be empty without getting errors
 // add a login and guest view 
+// stop the jump to the top of the page when the form submits
 
 export default App;
