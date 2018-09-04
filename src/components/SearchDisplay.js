@@ -23,6 +23,7 @@ class SearchDisplay extends Component {
                                 <h4>By: {bookObject.best_book.author.name}</h4>
                                 <button onClick={() => { this.props.addToRead(bookObject) }}><i className="fas fa-plus"></i>     To-Read</button>
                                 <button onClick={() => { this.props.addFinished(bookObject) }}><i className="fas fa-check"></i>  Finished</button>
+                                <i className="fab fa-goodreads"></i>
                             </div>
                         </div>
                     )

@@ -279,7 +279,7 @@ label[for='toggle'] {
   display: flex;
   flex-wrap: wrap; }
   .resultsFlex button {
-    width: 10rem; }
+    width: 100%; }
   .resultsFlex img {
     width: 10rem; }
 
