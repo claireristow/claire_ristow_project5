@@ -4,21 +4,41 @@
     font-size: 1.8rem;
 }
 
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .formFlex {
     margin: 1rem 0;
+    width: 40rem;
+    display: flex;
     input[type=text] {
+        padding: 0.5rem 1rem;
+        width: calc(65% - 1rem);
         border-radius: 0.2rem;
-        border: 0.1rem solid $darkColour;
+        border: 0.1rem solid $accent;
         margin-right: 1rem;
         &:focus {
-            border: 0.1rem solid $lightColour;
+            border: 0.1rem solid $darkColour;
         }
     }
     input[type=submit] {
-        width: 10rem;
+        width: 35%;
         font-size: 1.8rem;
         text-align: center;
-        padding: 0.2rem;
+        padding: 1rem;
+        background: $accent;
+        border: 0.1rem solid $accent;
+        border-radius: 3rem;
+        color: white;
+        &:hover {
+            background: none;
+            color: $offBlack;
+        }
     }
 }
 
@@ -30,5 +50,19 @@
     }
     img {
         width: 10rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .formFlex {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        input[type=text] {
+            margin: 0;
+        }
+        input[type=submit] {
+            width: 65%;
+        }
     }
 }

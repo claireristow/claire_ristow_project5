@@ -11,13 +11,17 @@ const ToReadDisplay = (props) => {
                 {Object.keys(props.toReadList).map((key) => {
                     return (
                         <div className="card" key={key}>
+                        <div className="bookCover">
                             <img src={props.toReadList[key].bookCover} alt={`book cover for ${props.toReadList[key].bookTitle}`} />
+                        </div>
                             <div className="displayContent">
                                 <h3>{props.toReadList[key].bookTitle}</h3>
-                                <h4>By: {props.toReadList[key].bookAuthor}</h4>
-                                <button onClick={() => { window.confirm('Are you sure you want to delete this book from your list?') === true ? props.removeFromToReadList(key) : null }} ><i className="fas fa-times"></i>  Delete from list</button>
-                                <button onClick={() => {props.moveToFinished(key), props.removeFromToReadList(key)}}><i className="fas fa-check"></i>  Move to Finished</button>
-                                <i className="fab fa-goodreads"></i>
+                                <div className="authorFlex">
+                                    <h4>By: {props.toReadList[key].bookAuthor}</h4>
+                                    <i className="fab fa-goodreads"></i>
+                                </div>
+                                <button onClick={() => { window.confirm('Are you sure you want to delete this book from your list?') === true ? props.removeFromToReadList(key) : null }} >Delete</button>
+                                <button onClick={() => {props.moveToFinished(key), props.removeFromToReadList(key)}}>Finished</button>
                             </div>
                         </div>
                     )

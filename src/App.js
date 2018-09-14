@@ -151,7 +151,7 @@ class App extends Component {
   // compilation of custom components
   render() {
     return (
-      <div className="App bigFlex">
+      <div className="App mainWrap">
         <Header />
         <div className="wrapper">
           <BookSearchForm runSearch={this.runSearch}/>

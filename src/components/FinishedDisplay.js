@@ -28,19 +28,23 @@ class FinishedDisplay extends Component {
                     {Object.keys(this.props.finishedList).map((key) => {
                         return (
                             <div className={`card ${key}`} key={key}>
+                            <div className="bookCover">
                                 <img src={this.props.finishedList[key].bookCover} alt={`book cover for ${this.props.finishedList[key].bookTitle}`} />
+                            </div>
                                 <div className="displayContent">
                                     <h3>{this.props.finishedList[key].bookTitle}</h3>
-                                    <h4>By: {this.props.finishedList[key].bookAuthor}</h4>
-                                    <div className="rating">
-                                        <i className="fas fa-star star1" onClick={() => { this.starFill("1", key) }}></i>
-                                        <i className="fas fa-star star2" onClick={() => { this.starFill("2", key) }}></i>
-                                        <i className="fas fa-star star3" onClick={() => { this.starFill("3", key) }}></i>
-                                        <i className="fas fa-star star4" onClick={() => { this.starFill("4", key) }}></i>
-                                        <i className="fas fa-star star5" onClick={() => { this.starFill("5", key) }}></i>
+                                    <div className="authorFlex">
+                                        <h4>By: {this.props.finishedList[key].bookAuthor}</h4>
+                                        <i className="fab fa-goodreads"></i>
                                     </div>
-                                    <button onClick={() => { window.confirm('Are you sure you want to delete this book from your list?') === true ? this.props.removeFromFinishedList(key) : null }}><i className="fas fa-times"></i>  Delete from list</button>
-                                    <i className="fab fa-goodreads"></i>
+                                    <div className="rating">
+                                        <i className="fas fa-star star1" onClick={() => this.starFill("1", key) }></i>
+                                        <i className="fas fa-star star2" onClick={() => this.starFill("2", key) }></i>
+                                        <i className="fas fa-star star3" onClick={() => this.starFill("3", key) }></i>
+                                        <i className="fas fa-star star4" onClick={() => this.starFill("4", key) }></i>
+                                        <i className="fas fa-star star5" onClick={() => this.starFill("5", key) }></i>
+                                    </div>
+                                    <button onClick={() => { window.confirm('Are you sure you want to delete this book from your list?') === true ? this.props.removeFromFinishedList(key) : null }}>Delete</button>
                                 </div>
                             </div>
                     );    

@@ -1,6 +1,6 @@
 header {
     width: 100%;
-    background: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url('./assets/cozy-book-optimized.jpg');
+    background: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url('./assets/simon-matzinger-320332-unsplash.jpg');
     background-size: cover;
     color: $offBlack;
     padding: 3rem 0;
@@ -45,7 +45,7 @@ nav a {
 }
 
 nav a:hover {
-	background: #bea6b2;
+	background: #71cbf1;
 }
 
 input#toggle:checked + nav {

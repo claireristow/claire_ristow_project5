@@ -1,0 +1,54 @@
+.card {
+    display: flex;
+    color: $offBlack;
+    text-align: left;
+    margin: 1rem;
+    padding: 1rem;
+    width: calc(33.33% - 2rem);
+    .displayContent {
+        width: 60%;
+        display: flex;
+        padding-left: 1rem;
+        flex-direction: column;
+    }
+    .bookCover {
+        width: 40%;
+        img {
+            object-fit: cover;
+            width: 100%;
+            max-height: 100%;
+        }
+    }
+
+.authorFlex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .fa-goodreads {
+        font-size: 2.5rem;
+        color: lightgrey;
+        padding-bottom: 0.5rem;
+    }
+}
+
+button, input[type=submit] {
+    width: 100%;
+    background: $darkColour;
+    border: 0.2rem solid $darkColour;
+    border-radius: 2rem;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    font-size: 1.6rem;
+    text-align: center;
+    &:hover {
+        background: none;
+    }
+}
+
+.fa-goodreads {
+    font-size: 2.5rem;
+    color: lightgrey;
+    align-self: flex-end;
+    justify-self: flex-end;
+    padding-top: 0.2rem
+}

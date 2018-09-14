@@ -159,18 +159,23 @@ html {
 
 body {
   font-size: 1.6rem;
-  color: #1c1c22;
-  font-family: 'M PLUS Rounded 1c', sans-serif; }
+  color: #1c1c22; }
+
+.mainWrap {
+  font-family: 'Quicksand', sans-serif; }
 
 h1 {
+  font-family: 'Amatic SC', cursive;
+  font-size: 10rem;
+  font-weight: 700;
   padding: 3rem 0 0 0;
-  margin: 0;
-  font-size: 7rem; }
+  margin: 0; }
 
 h2 {
+  font-family: 'Amatic SC', cursive;
   padding: 4rem 0;
   margin: 0;
-  font-size: 4rem;
+  font-size: 6rem;
   text-align: left; }
 
 h3 {
@@ -178,16 +183,17 @@ h3 {
   padding: 0;
   margin: 0 0 1rem 0;
   font-size: 2rem;
-  font-weight: 700; }
+  font-weight: 700;
+  line-height: 1.1; }
 
 h4 {
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   font-weight: 400;
   margin: 0 0 1rem 0; }
 
 header {
   width: 100%;
-  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("./assets/cozy-book-optimized.jpg");
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("./assets/simon-matzinger-320332-unsplash.jpg");
   background-size: cover;
   color: #1c1c22;
   padding: 3rem 0;
@@ -204,7 +210,7 @@ header p {
   font-size: 3.5rem; }
 
 nav {
-  background: #b098a4;
+  background: #59b5de;
   color: #fceff9;
   width: 30%;
   position: fixed;
@@ -226,7 +232,7 @@ nav a {
   display: block; }
 
 nav a:hover {
-  background: #bea6b2; }
+  background: #71cbf1; }
 
 input#toggle:checked + nav {
   /* hide or show */
@@ -257,23 +263,88 @@ label[for='toggle'] {
     width: 100%;
     right: -100%; } }
 
+.card {
+  display: flex;
+  color: #1c1c22;
+  text-align: left;
+  margin: 1rem;
+  padding: 1rem;
+  width: calc(33.33% - 2rem); }
+  .card .displayContent {
+    width: 60%;
+    display: flex;
+    padding-left: 1rem;
+    flex-direction: column; }
+  .card .bookCover {
+    width: 40%; }
+    .card .bookCover img {
+      object-fit: cover;
+      width: 100%;
+      max-height: 100%; }
+
+.authorFlex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .authorFlex .fa-goodreads {
+    font-size: 2.5rem;
+    color: lightgrey;
+    padding-bottom: 0.5rem; }
+
+button, input[type=submit] {
+  width: 100%;
+  background: #59b5de;
+  border: 0.2rem solid #59b5de;
+  border-radius: 2rem;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  font-size: 1.6rem;
+  text-align: center; }
+  button:hover, input[type=submit]:hover {
+    background: none; }
+
+.fa-goodreads {
+  font-size: 2.5rem;
+  color: lightgrey;
+  align-self: flex-end;
+  justify-self: flex-end;
+  padding-top: 0.2rem; }
+
 .searchResults {
   text-align: left;
   font-size: 1.8rem; }
 
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
 .formFlex {
-  margin: 1rem 0; }
+  margin: 1rem 0;
+  width: 40rem;
+  display: flex; }
   .formFlex input[type=text] {
+    padding: 0.5rem 1.8rem;
+    width: calc(65% - 1rem);
     border-radius: 0.2rem;
-    border: 0.1rem solid #b098a4;
+    border: 0.1rem solid #b46f81;
     margin-right: 1rem; }
     .formFlex input[type=text]:focus {
-      border: 0.1rem solid #ef6461; }
+      border: 0.1rem solid #59b5de; }
   .formFlex input[type=submit] {
-    width: 10rem;
+    width: 35%;
     font-size: 1.8rem;
     text-align: center;
-    padding: 0.2rem; }
+    padding: 1rem;
+    background: #b46f81;
+    border: 0.1rem solid #b46f81;
+    border-radius: 3rem;
+    color: white; }
+    .formFlex input[type=submit]:hover {
+      background: none;
+      color: #1c1c22; }
 
 .resultsFlex {
   display: flex;
@@ -283,33 +354,19 @@ label[for='toggle'] {
   .resultsFlex img {
     width: 10rem; }
 
+@media (max-width: 450px) {
+  .formFlex {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .formFlex input[type=text] {
+      margin: 0; }
+    .formFlex input[type=submit] {
+      width: 65%; } }
+
 .listFlex {
   display: flex;
   flex-wrap: wrap; }
-
-.card {
-  display: flex;
-  color: #1c1c22;
-  text-align: left;
-  margin: 1rem;
-  padding: 1rem;
-  width: calc(33.33% - 2rem);
-  font-family: 'Raleway', sans-serif; }
-  .card .displayContent {
-    width: 20rem;
-    margin-left: 1rem;
-    display: flex;
-    flex-direction: column; }
-  .card img {
-    object-fit: cover;
-    width: 50%;
-    margin-right: 1rem; }
-    .card img ::after {
-      font-family: 'Font Awesome 5 Free';
-      font-weight: 900;
-      content: '\f3a8';
-      bottom: 0;
-      right: 0; }
 
 .rating {
   padding: 0 0 1rem 0; }
@@ -317,29 +374,10 @@ label[for='toggle'] {
 i.fa-star {
   color: lightgrey; }
   i.fa-star:hover {
-    color: #ef6461; }
-
-.fa-goodreads {
-  font-size: 2.5rem;
-  color: lightgrey;
-  align-self: flex-end;
-  justify-self: flex-end;
-  padding-top: 0.2rem; }
+    color: #f2b447; }
 
 i.starFill {
-  color: #ef6461; }
-
-button, input[type=submit] {
-  width: 100%;
-  background: #b098a4;
-  border: none;
-  border-radius: 0.2rem;
-  margin: 0.5rem 0;
-  padding: 0.5rem;
-  font-size: 1.4rem;
-  text-align: left; }
-  button:hover, input[type=submit]:hover {
-    background: #bea6b2; }
+  color: #f2b447; }
 
 @media (max-width: 1180px) {
   .card {
