@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { Element } from 'react-scroll';
 
 class BookSearchForm extends Component {
     constructor() {
@@ -26,7 +25,7 @@ class BookSearchForm extends Component {
     };
     render() {
         return (
-            <Element className="searchResults wrapper" name="bookSearch">
+            <section className="searchResults wrapper" id="bookSearch">
                 <h2>Book Search</h2>
                 <form>
                     <label htmlFor="book">Search By Book Title or Author</label>
@@ -35,7 +34,7 @@ class BookSearchForm extends Component {
                         <input onClick={this.submitUserInput} type="submit" value="Search"/>
                     </div>
                 </form>
-            </Element>
+            </section>
         );
     };
 };

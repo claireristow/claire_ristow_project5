@@ -3,6 +3,10 @@ import './App.css';
 import axios from 'axios';
 import Qs from 'qs';
 import firebase from './firebase';
+import {
+  BrowserRouter as Router,
+  Route, Link
+} from 'react-router-dom';
 
 //COMPONENTS
 import Header from './components/Header';
@@ -145,7 +149,7 @@ class App extends Component {
       this.setState({
         finishedList: snapshot.val()
       })
-      this.checkStarFillClass(this.state.finishedList)
+      this.checkStarFillClass(this.state.finishedList);
     });
   };
   // compilation of custom components

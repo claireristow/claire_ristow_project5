@@ -1,11 +1,9 @@
 import React from 'react';
-import { Element } from 'react-scroll';
 
-// Display each book in the to-read array as a Component. Each Component will have the book cover, the book title, the book author, a checkmark to move it to the completed list, and an X to remove it from the to-read list.
 // create an alert before to confirm the user wants to delete a book
 const ToReadDisplay = (props) => {
     return (
-        <Element className="toReadList" name="toRead" spy={true} smooth={true} duration={500}>
+        <section className="toReadList" id="toRead">
             <h2>My To-Read List</h2>
             <div className="listFlex">
                 {Object.keys(props.toReadList).map((key) => {
@@ -27,7 +25,7 @@ const ToReadDisplay = (props) => {
                     )
                 })}
             </div>
-        </Element>
+        </section>
     );
 };
 
